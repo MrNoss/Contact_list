@@ -100,6 +100,31 @@ namespace Contact_list
 
             }
         }
-        
-    }
+
+        private void Search_bar_TextChanged(object sender, EventArgs e)
+        {
+            String search_value = Search_bar.Text;
+            try { 
+                if (search_value.Length > 0)
+                {
+                    var re = from row in table.AsEnumerable()
+                             where row[0].ToString().Contains(search_value)
+                             select row;
+                    if (re.Count() == 0)
+                    {
+                        MessageBox.Show("No row");
+                    }
+                    else
+                    {
+                        contacts_data.DataSource = re.CopyToDataTable();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+       }
 }

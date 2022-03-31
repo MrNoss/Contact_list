@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.Add_contact = new System.Windows.Forms.Button();
             this.Delete_contact = new System.Windows.Forms.Button();
             this.Show_contact = new System.Windows.Forms.Button();
@@ -42,14 +41,15 @@
             this.contacts_data = new System.Windows.Forms.DataGridView();
             this.Edit_contact = new System.Windows.Forms.Button();
             this.Type_lable = new System.Windows.Forms.Label();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.Type_menu = new System.Windows.Forms.ComboBox();
+            this.Search_bar = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.contacts_data)).BeginInit();
             this.SuspendLayout();
             // 
             // Add_contact
             // 
-            this.Add_contact.Location = new System.Drawing.Point(36, 188);
+            this.Add_contact.Location = new System.Drawing.Point(242, 47);
             this.Add_contact.Name = "Add_contact";
             this.Add_contact.Size = new System.Drawing.Size(75, 23);
             this.Add_contact.TabIndex = 0;
@@ -59,7 +59,7 @@
             // 
             // Delete_contact
             // 
-            this.Delete_contact.Location = new System.Drawing.Point(361, 188);
+            this.Delete_contact.Location = new System.Drawing.Point(326, 83);
             this.Delete_contact.Name = "Delete_contact";
             this.Delete_contact.Size = new System.Drawing.Size(75, 23);
             this.Delete_contact.TabIndex = 1;
@@ -69,7 +69,7 @@
             // 
             // Show_contact
             // 
-            this.Show_contact.Location = new System.Drawing.Point(279, 188);
+            this.Show_contact.Location = new System.Drawing.Point(326, 48);
             this.Show_contact.Name = "Show_contact";
             this.Show_contact.Size = new System.Drawing.Size(75, 23);
             this.Show_contact.TabIndex = 2;
@@ -79,7 +79,7 @@
             // 
             // Clear_Text
             // 
-            this.Clear_Text.Location = new System.Drawing.Point(117, 188);
+            this.Clear_Text.Location = new System.Drawing.Point(242, 78);
             this.Clear_Text.Name = "Clear_Text";
             this.Clear_Text.Size = new System.Drawing.Size(75, 23);
             this.Clear_Text.TabIndex = 3;
@@ -145,7 +145,7 @@
             // 
             // Edit_contact
             // 
-            this.Edit_contact.Location = new System.Drawing.Point(198, 188);
+            this.Edit_contact.Location = new System.Drawing.Point(242, 109);
             this.Edit_contact.Name = "Edit_contact";
             this.Edit_contact.Size = new System.Drawing.Size(75, 23);
             this.Edit_contact.TabIndex = 11;
@@ -162,11 +162,6 @@
             this.Type_lable.TabIndex = 12;
             this.Type_lable.Text = "Type";
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
             // Type_menu
             // 
             this.Type_menu.FormattingEnabled = true;
@@ -179,11 +174,31 @@
             this.Type_menu.Size = new System.Drawing.Size(101, 21);
             this.Type_menu.TabIndex = 14;
             // 
+            // Search_bar
+            // 
+            this.Search_bar.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.Search_bar.Location = new System.Drawing.Point(326, 191);
+            this.Search_bar.Name = "Search_bar";
+            this.Search_bar.Size = new System.Drawing.Size(100, 20);
+            this.Search_bar.TabIndex = 15;
+            this.Search_bar.TextChanged += new System.EventHandler(this.Search_bar_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(230, 194);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(87, 13);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Search by name:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(448, 382);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.Search_bar);
             this.Controls.Add(this.Type_menu);
             this.Controls.Add(this.Type_lable);
             this.Controls.Add(this.Edit_contact);
@@ -222,8 +237,9 @@
         private System.Windows.Forms.DataGridView contacts_data;
         private System.Windows.Forms.Button Edit_contact;
         private System.Windows.Forms.Label Type_lable;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ComboBox Type_menu;
+        private System.Windows.Forms.TextBox Search_bar;
+        private System.Windows.Forms.Label label4;
     }
 }
 
